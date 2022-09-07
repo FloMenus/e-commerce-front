@@ -1,13 +1,7 @@
-import React from "react";
-
 const CardCart = ({ name, vendor, image, price }) => {
   return (
     <div class="flex items-start pt-8 pb-12 border-solid border border-black p-5">
-      <img
-        class="object-cover w-16 h-16 rounded-lg"
-        src={image}
-        alt=""
-      />
+      <img class="object-cover w-16 h-16 rounded-lg" src={image} alt="" />
 
       <div class="ml-4">
         <h3 class="text-sm">{name}</h3>

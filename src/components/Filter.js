@@ -92,7 +92,7 @@ const Filter = () => {
                     />
 
                     <label for="3+" class="ml-3 text-sm font-medium">
-                      3+
+                      New
                     </label>
                   </div>
 
@@ -105,33 +105,7 @@ const Filter = () => {
                     />
 
                     <label for="8+" class="ml-3 text-sm font-medium">
-                      8+
-                    </label>
-                  </div>
-
-                  <div class="flex items-center">
-                    <input
-                      id="12+"
-                      type="checkbox"
-                      name="age[12+]"
-                      class="w-5 h-5 border-gray-300 rounded"
-                    />
-
-                    <label for="12+" class="ml-3 text-sm font-medium">
-                      12+
-                    </label>
-                  </div>
-
-                  <div class="flex items-center">
-                    <input
-                      id="16+"
-                      type="checkbox"
-                      name="age[16+]"
-                      class="w-5 h-5 border-gray-300 rounded"
-                    />
-
-                    <label for="16+" class="ml-3 text-sm font-medium">
-                      16+
+                      Promo
                     </label>
                   </div>
 
