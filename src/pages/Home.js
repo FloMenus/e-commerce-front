@@ -4,6 +4,7 @@ import { getProducts, getCategories } from "../api/Home"
 import Card from "../components/Card"
 import Layout from "../layout/Layout"
 import Grid from "../components/Grid"
+import Filter from "../components/Filter"
 
 const Home = () => {
   // state
@@ -26,6 +27,7 @@ const Home = () => {
 
   return (
     <Layout title="HomePage">
+      <Filter />
       <Grid>
         {products.map((product) => {
           return <Card product={product} />

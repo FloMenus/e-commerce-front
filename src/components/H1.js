@@ -1,5 +1,5 @@
 const H1 = ({ title }) => {
-  return <h1>{title}</h1>;
-};
+  return <h1 className="mb-8">{title}</h1>
+}
 
-export default H1;
+export default H1

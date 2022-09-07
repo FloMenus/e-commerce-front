@@ -1,17 +1,17 @@
-import H1 from "../components/H1";
-import Header from "../components/Header";
-import MainContainer from "../components/MainContainer";
+import H1 from "../components/H1"
+import Header from "../components/Header"
+import MainContainer from "../components/MainContainer"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, title }) => {
   return (
     <>
       <Header />
       <MainContainer>
-        <H1 />
+        <H1 title={title} />
         {children}
       </MainContainer>
     </>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout
