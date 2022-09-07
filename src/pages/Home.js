@@ -27,11 +27,7 @@ const Home = () => {
   return (
     <Layout title="HomePage">
       <Grid>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        <Card name={product.name} image={product.image} price={product.price}/>
       </Grid>
     </Layout>
   );

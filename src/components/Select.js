@@ -1,7 +1,12 @@
+import Option from "./Option"
 
-const Select = () => {
+const Select = ({ handleChange, value, options }) => {
   return (
-    <div>Select</div>
+    <select onChange={handleChange} value={value}>
+      {options.map((option) => (
+        <Option key={option.value} value={option.value} content={option.content} />
+      ))}
+    </select>
   )
 }
 

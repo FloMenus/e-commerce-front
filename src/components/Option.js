@@ -1,7 +1,6 @@
-
-const Option = () => {
+const Option = ({value, content}) => {
   return (
-    <div>Option</div>
+    <option value={value}>{content}</option>
   )
 }
 
