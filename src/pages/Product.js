@@ -1,25 +1,25 @@
-import { useParams } from "react-router-dom";
-import { getProduct } from "../api/Product";
-import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom"
+import { getProduct } from "../api/Product"
+import { useEffect, useState } from "react"
 
 const Product = () => {
-  const { id } = useParams();
+  const { id } = useParams()
   // state
-  const [product, setProduct] = useState(null);
+  const [product, setProduct] = useState(null)
 
   // didMount, didUpdate
   useEffect(() => {
-    fetchData();
-  }, []);
+    fetchData()
+  }, [])
 
   //methodes
 
   const fetchData = async () => {
-    const productData = await getProduct(id);
-    setProduct(productData);
-  };
+    const productData = await getProduct(id)
+    setProduct(productData)
+  }
+  // loader a faire
+  return <div>Product</div>
+}
 
-  return <div>Product</div>;
-};
-
-export default Product;
+export default Product
