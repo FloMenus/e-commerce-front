@@ -27,7 +27,9 @@ const Home = () => {
   return (
     <Layout title="HomePage">
       <Grid>
+        {products.map((product) => (
         <Card name={product.name} image={product.image} price={product.price}/>
+        ))}
       </Grid>
     </Layout>
   );
