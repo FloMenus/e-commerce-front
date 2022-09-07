@@ -7,6 +7,9 @@ const Home = () => {
     <div>
       <H1 />
       <Card />
+      <Card />
+      <Card />
+      <Card />  
     </div>
   );
 };
