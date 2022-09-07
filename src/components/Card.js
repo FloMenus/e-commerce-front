@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
 
-const Card = ({ name, image, price }) => {
+const Card = ({ product }) => {
+  const { name, image, price } = product
   return (
     <Link to="/id" className="relative block bg-white">
       <button
@@ -64,7 +65,7 @@ const Card = ({ name, image, price }) => {
         </button>
       </div>
     </Link>
-  );
-};
+  )
+}
 
-export default Card;
+export default Card

@@ -1,9 +1,9 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 
-import Home from "./pages/Home";
-import Product from "./pages/Product";
-import Cart from "./pages/Cart";
-import Order from "./pages/Order";
+import Home from "./pages/Home"
+import Product from "./pages/Product"
+import Cart from "./pages/Cart"
+import Order from "./pages/Order"
 
 const App = () => {
   return (
@@ -17,7 +17,7 @@ const App = () => {
         </Routes>
       </BrowserRouter>
     </>
-  );
-};
+  )
+}
 
-export default App;
+export default App
