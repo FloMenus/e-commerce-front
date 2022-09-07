@@ -1,23 +1,23 @@
-import { useParams } from "react-router-dom"
-import { getProduct } from "../api/Product"
-import { useEffect, useState } from "react"
+import { useParams } from "react-router-dom";
+import { getProduct } from "../api/Product";
+import { useEffect, useState } from "react";
 
 const Product = () => {
-  const { id } = useParams()
+  const { id } = useParams();
   // state
-  const [product, setProduct] = useState(null)
+  const [product, setProduct] = useState(null);
 
   // didMount, didUpdate
   useEffect(() => {
-    fetchData()
-  }, [])
+    fetchData();
+  }, []);
 
   //methodes
 
   const fetchData = async () => {
-    const productData = await getProduct(id)
-    setProduct(productData)
-  }
+    const productData = await getProduct(id);
+    setProduct(productData);
+  };
 
   return (
     <section>
@@ -315,7 +315,7 @@ const Product = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Product
+export default Product;
