@@ -72,41 +72,14 @@ const Product = () => {
         <div class="flex justify-between mt-8">
           <div class="max-w-[35ch]">
             <h1 class="text-2xl font-bold">
-              Fun Product That Does Something Cool
+              {product.name}
             </h1>
 
             <p class="mt-0.5 text-sm">
-              Highest Rated Product
+              {product.vendor}
             </p>
 
             <div class="flex mt-2 -ml-0.5">
-              <svg
-                class="w-5 h-5 text-yellow-400"
-                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-              >
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-
-              <svg
-                class="w-5 h-5 text-yellow-400"
-                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-              >
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-
-              <svg
-                class="w-5 h-5 text-yellow-400"
-                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-              >
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-
-              <svg
-                class="w-5 h-5 text-yellow-400"
-                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-              >
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
 
               <svg
                 class="w-5 h-5 text-gray-200"
@@ -118,7 +91,7 @@ const Product = () => {
           </div>
 
           <p class="text-lg font-bold">
-            $119.99
+            {product.price}
           </p>
         </div>
 
@@ -127,13 +100,10 @@ const Product = () => {
             <div>
               <div class="prose max-w-none group-open:hidden">
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa veniam dicta beatae eos ex error culpa delectus rem tenetur, architecto quam nesciunt, dolor veritatis nisi minus inventore, rerum at recusandae?
+                  {product.description}
                 </p>
               </div>
 
-              <span class="mt-4 text-sm font-medium underline cursor-pointer group-open:absolute group-open:bottom-0 group-open:left-0 group-open:mt-0">
-                Read More
-              </span>
             </div>
           </summary>
 
@@ -149,37 +119,6 @@ const Product = () => {
         </details>
 
         <form class="mt-8">
-          <fieldset>
-            <legend class="mb-1 text-sm font-medium">Color</legend>
-
-            <div class="flow-root">
-              <div class="flex flex-wrap -m-0.5">
-                <label for="color_tt" class="cursor-pointer p-0.5">
-                  <input type="radio" name="color" id="color_tt" class="sr-only peer" />
-
-                  <span class="inline-block px-3 py-1 text-xs font-medium border rounded-full group peer-checked:bg-black peer-checked:text-white">
-                    Texas Tea
-                  </span>
-                </label>
-
-                <label for="color_fr" class="cursor-pointer p-0.5">
-                  <input type="radio" name="color" id="color_fr" class="sr-only peer" />
-
-                  <span class="inline-block px-3 py-1 text-xs font-medium border rounded-full group peer-checked:bg-black peer-checked:text-white">
-                    Fiesta Red
-                  </span>
-                </label>
-
-                <label for="color_cb" class="cursor-pointer p-0.5">
-                  <input type="radio" name="color" id="color_cb" class="sr-only peer" />
-
-                  <span class="inline-block px-3 py-1 text-xs font-medium border rounded-full group peer-checked:bg-black peer-checked:text-white">
-                    Cobalt Blue
-                  </span>
-                </label>
-              </div>
-            </div>
-          </fieldset>
 
           <fieldset class="mt-4">
             <legend class="mb-1 text-sm font-medium">Size</legend>

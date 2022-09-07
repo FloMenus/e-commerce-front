@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { getProducts, getCategories } from "../api/Home";
+import { Link } from "react-router-dom";
 
 import Card from "../components/Card";
 import Layout from "../layout/Layout";
@@ -28,7 +29,13 @@ const Home = () => {
     <Layout title="HomePage">
       <Grid>
         {products.map((product) => (
-        <Card name={product.name} image={product.image} price={product.price}/>
+          <Link to={`/product/${product.id}`}>
+            <Card
+              name={product.name}
+              image={product.image}
+              price={product.price}
+            />
+          </Link>
         ))}
       </Grid>
     </Layout>
