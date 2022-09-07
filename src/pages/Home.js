@@ -1,16 +1,13 @@
 import Card from "../components/Card";
-import H1 from "../components/H1";
-import CardCart from "../components/CardCart";
+import Layout from "../layout/Layout";
 
 const Home = () => {
   return (
-    <div>
-      <H1 />
+    <Layout title="HomePage">
       <Card />
       <Card />
       <Card />
-      <Card />  
-    </div>
+    </Layout>
   );
 };
 
