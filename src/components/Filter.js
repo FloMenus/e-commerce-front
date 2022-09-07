@@ -1,13 +1,16 @@
 const Filter = () => {
   return (
     <section>
-      <div class="lg:sticky lg:top-4">
-        <details open class="overflow-hidden border border-gray-200 rounded">
-          <summary class="flex items-center justify-between px-5 py-3 bg-gray-100 lg:hidden">
-            <span class="text-sm font-medium">Toggle Filters</span>
+      <div className="lg:sticky lg:top-4">
+        <details
+          open
+          className="overflow-hidden border border-gray-200 rounded"
+        >
+          <summary className="flex items-center justify-between px-5 py-3 bg-gray-100 lg:hidden">
+            <span className="text-sm font-medium">Toggle Filters</span>
 
             <svg
-              class="w-5 h-5"
+              className="w-5 h-5"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -22,54 +25,57 @@ const Filter = () => {
             </svg>
           </summary>
 
-          <form action="" class="border-t border-gray-200 lg:border-t-0">
+          <form action="" className="border-t border-gray-200 lg:border-t-0">
             <fieldset>
-              <legend class="block w-full px-5 py-3 text-xs font-medium bg-gray-50">
+              <legend className="block w-full px-5 py-3 text-xs font-medium bg-gray-50">
                 Type
               </legend>
 
-              <div class="px-5 py-6 space-y-2">
-                <div class="flex items-center">
+              <div className="px-5 py-6 space-y-2">
+                <div className="flex items-center">
                   <input
                     id="toy"
                     type="checkbox"
                     name="type[toy]"
-                    class="w-5 h-5 border-gray-300 rounded"
+                    className="w-5 h-5 border-gray-300 rounded"
                   />
 
-                  <label for="toy" class="ml-3 text-sm font-medium">
+                  <label for="toy" className="ml-3 text-sm font-medium">
                     Female
                   </label>
                 </div>
 
-                <div class="flex items-center">
+                <div className="flex items-center">
                   <input
                     id="game"
                     type="checkbox"
                     name="type[game]"
-                    class="w-5 h-5 border-gray-300 rounded"
+                    className="w-5 h-5 border-gray-300 rounded"
                   />
 
-                  <label for="game" class="ml-3 text-sm font-medium">
+                  <label for="game" className="ml-3 text-sm font-medium">
                     Male
                   </label>
                 </div>
 
-                <div class="flex items-center">
+                <div className="flex items-center">
                   <input
                     id="outdoor"
                     type="checkbox"
                     name="type[outdoor]"
-                    class="w-5 h-5 border-gray-300 rounded"
+                    className="w-5 h-5 border-gray-300 rounded"
                   />
 
-                  <label for="outdoor" class="ml-3 text-sm font-medium">
+                  <label for="outdoor" className="ml-3 text-sm font-medium">
                     Gender free
                   </label>
                 </div>
 
-                <div class="pt-2">
-                  <button type="button" class="text-xs text-gray-500 underline">
+                <div className="pt-2">
+                  <button
+                    type="button"
+                    className="text-xs text-gray-500 underline"
+                  >
                     Reset Type
                   </button>
                 </div>
@@ -78,41 +84,41 @@ const Filter = () => {
 
             <div>
               <fieldset>
-                <legend class="block w-full px-5 py-3 text-xs font-medium bg-gray-50">
+                <legend className="block w-full px-5 py-3 text-xs font-medium bg-gray-50">
                   Age
                 </legend>
 
-                <div class="px-5 py-6 space-y-2">
-                  <div class="flex items-center">
+                <div className="px-5 py-6 space-y-2">
+                  <div className="flex items-center">
                     <input
                       id="3+"
                       type="checkbox"
                       name="age[3+]"
-                      class="w-5 h-5 border-gray-300 rounded"
+                      className="w-5 h-5 border-gray-300 rounded"
                     />
 
-                    <label for="3+" class="ml-3 text-sm font-medium">
+                    <label for="3+" className="ml-3 text-sm font-medium">
                       New
                     </label>
                   </div>
 
-                  <div class="flex items-center">
+                  <div className="flex items-center">
                     <input
                       id="8+"
                       type="checkbox"
                       name="age[8+]"
-                      class="w-5 h-5 border-gray-300 rounded"
+                      className="w-5 h-5 border-gray-300 rounded"
                     />
 
-                    <label for="8+" class="ml-3 text-sm font-medium">
+                    <label for="8+" className="ml-3 text-sm font-medium">
                       Promo
                     </label>
                   </div>
 
-                  <div class="pt-2">
+                  <div className="pt-2">
                     <button
                       type="button"
-                      class="text-xs text-gray-500 underline"
+                      className="text-xs text-gray-500 underline"
                     >
                       Reset Age
                     </button>
@@ -121,11 +127,11 @@ const Filter = () => {
               </fieldset>
             </div>
 
-            <div class="flex justify-between px-5 py-3 border-t border-gray-200">
+            <div className="flex justify-between px-5 py-3 border-t border-gray-200">
               <button
                 name="reset"
                 type="button"
-                class="text-xs font-medium text-gray-600 underline rounded"
+                className="text-xs font-medium text-gray-600 underline rounded"
               >
                 Reset All
               </button>
@@ -133,7 +139,7 @@ const Filter = () => {
               <button
                 name="commit"
                 type="button"
-                class="px-5 py-3 text-xs font-medium text-white bg-green-600 rounded"
+                className="px-5 py-3 text-xs font-medium text-white bg-green-600 rounded"
               >
                 Apply Filters
               </button>
