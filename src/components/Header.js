@@ -5,7 +5,7 @@ import Logo from "./Logo"
 
 const Header = () => {
   return (
-    <header className=" h-16 flex items-center justify-around bg-[#ccc] rounded-b-[10px] px-10 dark:bg-gray-900">
+    <header className="h-16 bg-[#ccc] rounded-b-[10px] px-10 dark:bg-gray-900 sticky top-0 z-10">
       <Navbar />
     </header>
   )
