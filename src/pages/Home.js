@@ -1,12 +1,13 @@
 import Card from "../components/Card";
-import H1 from "../components/H1";
+import Layout from "../layout/Layout";
 
 const Home = () => {
   return (
-    <div>
-      <H1 />
+    <Layout title="HomePage">
       <Card />
-    </div>
+      <Card />
+      <Card />
+    </Layout>
   );
 };
 
