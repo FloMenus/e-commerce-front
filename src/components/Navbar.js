@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import CartHeader from "./CartHeader";
 import Logo from "./Logo";
 

@@ -6,7 +6,7 @@ const CardCart = ({ name, vendor, image, price }) => {
       <img
         class="object-cover w-16 h-16 rounded-lg"
         src={image}
-        alt="Item image"
+        alt=""
       />
 
       <div class="ml-4">

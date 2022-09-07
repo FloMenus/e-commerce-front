@@ -1,8 +1,8 @@
+import { Link } from "react-router-dom";
+
 const Card = () => {
   return (
-    <section>
-      <div class="mt-4 bg-gray-200 border border-gray-200 grid grid-cols-1 gap-px sm:grid-cols-2 lg:grid-cols-3">
-        <a href="/product/build-your-own-drone" class="relative block bg-white">
+        <Link to="/id" class="relative block bg-white">
           <button
             type="button"
             name="wishlist"
@@ -63,19 +63,8 @@ const Card = () => {
               </svg>
             </button>
           </div>
-        </a>
-      </div>
-    </section>
+        </Link>
   );
-  {
-    /* <script>
-  window.addEventListener('resize', () => {
-    const desktopScreen = window.innerWidth < 768
-
-    document.querySelector('details').open = !desktopScreen
-  })
-</script> */
-  }
 };
 
 export default Card;
