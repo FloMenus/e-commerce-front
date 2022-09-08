@@ -47,6 +47,7 @@ const Home = ({ handleClick }) => {
 
   return (
     <Layout title="HomePage">
+      <h3>Trier</h3>
       <Select handleChange={handleChangeFilter} value={selectedCategory} options={categories}  />
       <Grid>
         {products.map((product) => (
