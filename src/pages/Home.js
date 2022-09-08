@@ -1,24 +1,22 @@
-import { useState, useEffect } from "react";
-import { getProducts, getCategories } from "../api/Home";
-import { getProductsByCategory } from "../api/Product";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react"
+import { getProducts, getCategories } from "../api/Home"
+import { getProductsByCategory } from "../api/Product"
 
 import Card from "../components/Card"
 import Layout from "../layout/Layout"
 import Grid from "../components/Grid"
-import Select from "../components/Select";
+import Select from "../components/Select"
 
-
-const Home = () => {
+const Home = ({ handleClick }) => {
   // state
   const [products, setProducts] = useState([])
   const [categories, setCategories] = useState([])
-  
+
   // didMount, didUpdate
   useEffect(() => {
     fetchData()
   }, [])
-  
+
   //methodes
 
   const fetchData = async () => {
@@ -38,13 +36,10 @@ const Home = () => {
   }
   return (
     <Layout title="HomePage">
-      {console.log(categories)}
-      <Select /*handleChange={}*/ value="all" options={categories}  />
+      <Select /*handleChange={}*/ value="all" options={categories} />
       <Grid>
         {products.map((product) => (
-          <Link to={`/${product.id}`}>
-            <Card product={product} />
-          </Link>
+          <Card handleClick={handleClick} product={product} />
         ))}
       </Grid>
     </Layout>

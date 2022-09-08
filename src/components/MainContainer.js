@@ -1,5 +1,5 @@
 const MainContainer = ({ children }) => {
-  return <div className="container mx-auto my-10">{children}</div>;
-};
+  return <main className="container mx-auto my-10">{children}</main>
+}
 
-export default MainContainer;
+export default MainContainer

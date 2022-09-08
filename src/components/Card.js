@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import Button from "./Button"
 
-const Card = ({ product }) => {
+const Card = ({ product, handleClick }) => {
   const { name, image, price, id } = product
   return (
     <article className="relative block bg-white border border-grey-300">
@@ -24,7 +24,12 @@ const Card = ({ product }) => {
           {price / 100} €
         </p>
 
-        <Button name="add" type="button" text="Add to Cart" handleClick={""} />
+        <Button
+          name="add"
+          type="button"
+          text="Add to Cart"
+          handleClick={() => handleClick(id)}
+        />
       </div>
     </article>
   )
