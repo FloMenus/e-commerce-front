@@ -10,7 +10,7 @@ const getProduct = async (id) => {
 
 const getProductsByCategory = async (category) => {
   const request = await fetch(
-    `${process.env.REACT_APP_ADDRESS}/${category}/products`
+    `${process.env.REACT_APP_ADDRESS}/categories/${category}/products`
   );
   const response = await request.json();
   return response;

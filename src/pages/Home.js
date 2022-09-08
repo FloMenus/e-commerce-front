@@ -13,11 +13,15 @@ const Home = () => {
   // state
   const [products, setProducts] = useState([])
   const [categories, setCategories] = useState([])
+  const [selectedCategory, setSelectedCategory] = useState("")
   
-  // didMount, didUpdate
+  // didMount
   useEffect(() => {
     fetchData()
   }, [])
+  useEffect( () => {
+
+  },[selectedCategory])
   
   //methodes
 
@@ -28,18 +32,24 @@ const Home = () => {
     setCategories(categoriesData)
   }
 
-  const handleChangeFilter = (e) => {
+  const handleChangeFilter = async e => {
     const category = e.target.value
-    if (category === "all") {
+    setSelectedCategory(category)
+    if (category === "") {
       fetchData()
     } else {
-      getProductsByCategory(category)
+      fetchProductsByCategory(category)
     }
   }
+
+  const fetchProductsByCategory = async (category) => {
+    const productsData = await getProductsByCategory(category)
+      setProducts(productsData)
+  }
+
   return (
     <Layout title="HomePage">
-      {console.log(categories)}
-      <Select /*handleChange={}*/ value="all" options={categories}  />
+      <Select handleChange={handleChangeFilter} value={selectedCategory} options={categories}  />
       <Grid>
         {products.map((product) => (
           <Link to={`/${product.id}`}>
