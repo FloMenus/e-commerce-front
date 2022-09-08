@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { getProducts, getCategories } from "../api/Home";
+import { getProductsByCategory } from "../api/Product";
 import { Link } from "react-router-dom";
 
 import Card from "../components/Card"
 import Layout from "../layout/Layout"
 import Grid from "../components/Grid"
-import Filter from "../components/Filter"
+import Select from "../components/Select";
+
 
 const Home = () => {
   // state
@@ -16,8 +18,6 @@ const Home = () => {
   useEffect(() => {
     fetchData()
   }, [])
-
-  console.log(products)
   
   //methodes
 
@@ -27,9 +27,19 @@ const Home = () => {
     const categoriesData = await getCategories()
     setCategories(categoriesData)
   }
+
+  const handleChangeFilter = (e) => {
+    const category = e.target.value
+    if (category === "all") {
+      fetchData()
+    } else {
+      getProductsByCategory(category)
+    }
+  }
   return (
     <Layout title="HomePage">
-      <Filter />
+      {console.log(categories)}
+      <Select /*handleChange={}*/ value="all" options={categories}  />
       <Grid>
         {products.map((product) => (
           <Link to={`/${product.id}`}>

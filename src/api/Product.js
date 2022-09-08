@@ -7,3 +7,13 @@ const getProduct = async (id) => {
   const response = await request.json();
   return response;
 };
+
+const getProductsByCategory = async (category) => {
+  const request = await fetch(
+    `${process.env.REACT_APP_ADDRESS}/${category}/products`
+  );
+  const response = await request.json();
+  return response;
+};
+
+export { getProduct, getProductsByCategory };
