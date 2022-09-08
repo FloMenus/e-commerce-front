@@ -1,23 +1,25 @@
-import { useState, useEffect } from "react";
-import { getProducts, getCategories } from "../api/Home";
-import { getProductsByCategory } from "../api/Product";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react"
+import { getProducts, getCategories } from "../api/Home"
+import { getProductsByCategory } from "../api/Product"
 
 import Card from "../components/Card"
 import Layout from "../layout/Layout"
 import Grid from "../components/Grid"
-import Select from "../components/Select";
+import Select from "../components/Select"
 
-
-const Home = () => {
+const Home = ({ handleClick }) => {
   // state
   const [products, setProducts] = useState([])
   const [categories, setCategories] = useState([])
+  const [selectedCategory, setSelectedCategory] = useState("")
   
-  // didMount, didUpdate
+  // didMount
   useEffect(() => {
     fetchData()
   }, [])
+  useEffect( () => {
+
+  },[selectedCategory])
   
   //methodes
 
@@ -28,23 +30,27 @@ const Home = () => {
     setCategories(categoriesData)
   }
 
-  const handleChangeFilter = (e) => {
+  const handleChangeFilter = async e => {
     const category = e.target.value
-    if (category === "all") {
+    setSelectedCategory(category)
+    if (category === "") {
       fetchData()
     } else {
-      getProductsByCategory(category)
+      fetchProductsByCategory(category)
     }
   }
+
+  const fetchProductsByCategory = async (category) => {
+    const productsData = await getProductsByCategory(category)
+      setProducts(productsData)
+  }
+
   return (
     <Layout title="HomePage">
-      {console.log(categories)}
-      <Select /*handleChange={}*/ value="all" options={categories}  />
+      <Select handleChange={handleChangeFilter} value={selectedCategory} options={categories}  />
       <Grid>
         {products.map((product) => (
-          <Link to={`/${product.id}`}>
-            <Card product={product} />
-          </Link>
+          <Card handleClick={handleClick} product={product} />
         ))}
       </Grid>
     </Layout>
