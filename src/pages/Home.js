@@ -44,11 +44,13 @@ const Home = ({ handleClick, countCart }) => {
 
   return (
     <Layout title="HomePage" countCart={countCart}>
+      <h3>Trier</h3>
       <Select
         handleChange={handleChangeFilter}
         value={selectedCategory}
         options={categories}
       />
+
       <Grid>
         {products.map((product) => (
           <Card key={product.id} handleClick={handleClick} product={product} />
