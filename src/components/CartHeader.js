@@ -11,7 +11,7 @@ const CartHeader = ({ countCart }) => {
         className="h-5 sm:h-6"
         alt="Cart"
       />
-      {countCart > 0 && <p className="text-red-900">{countCart}</p>}
+      {countCart > 0 && <p className="text-red-600">{countCart}</p>}
     </Link>
   )
 }

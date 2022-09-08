@@ -1,36 +1,34 @@
-import { useParams } from "react-router-dom";
-import { getProduct } from "../api/Product";
-import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom"
+import { getProduct } from "../api/Product"
+import { useEffect, useState } from "react"
 
-import Layout from "../layout/Layout";
-import H1 from "../components/H1";
-import Button from "../components/Button";
+import Layout from "../layout/Layout"
+import H1 from "../components/H1"
+import Button from "../components/Button"
 
-const Product = () => {
-  const { id } = useParams();
+const Product = ({ countCart, handleClick }) => {
+  const { id } = useParams()
   // state
-  const [product, setProduct] = useState(null);
+  const [product, setProduct] = useState(null)
 
   // didMount, didUpdate
   useEffect(() => {
-    fetchData();
-  }, []);
+    fetchData()
+  }, [])
 
   //methodes
 
   const fetchData = async () => {
-    const productData = await getProduct(id);
-    setProduct(productData);
-  };
-  // console.log(id)
-  console.log(product);
+    const productData = await getProduct(id)
+    setProduct(productData)
+  }
 
   if (!product) {
-    return <h2>Loading...</h2>;
+    return <h2>Loading...</h2>
   }
 
   return (
-    <Layout title="">
+    <Layout title="" countCart={countCart}>
       <section>
         <div class="relative px-4 py-8 mx-auto max-w-screen-xl bg-">
           <div class="items-start grid grid-cols-1 gap-8 md:grid-cols-2">
@@ -46,7 +44,7 @@ const Product = () => {
               <div class="flex justify-between mt-8">
                 <div class="max-w-[35ch]">
                   <H1 title={product.name} />
-                  <p class="mt-0.5 text-sm">Vendor: {product.vendor}</p>
+                  <p class="mt-0.5 text-sm">Vendeur: {product.vendor}</p>
                 </div>
 
                 <p class="text-lg font-bold">{product.price / 100} €</p>
@@ -64,7 +62,12 @@ const Product = () => {
 
               <form class="mt-8">
                 <div class="flex mt-8">
-                <Button name="add" type="button" text="Add to Cart" handleClick={""} />
+                  <Button
+                    name="add"
+                    type="button"
+                    text="Add to Cart"
+                    handleClick={handleClick}
+                  />
                 </div>
               </form>
             </div>
@@ -72,7 +75,7 @@ const Product = () => {
         </div>
       </section>
     </Layout>
-  );
-};
+  )
+}
 
-export default Product;
+export default Product

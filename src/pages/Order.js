@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom"
 import { getOrder } from "../api/Order"
 import { useEffect, useState } from "react"
 
-const Order = () => {
+const Order = ({ countCart }) => {
   const { id } = useParams()
   // state
   const [order, setOrder] = useState(null)

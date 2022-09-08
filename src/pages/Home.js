@@ -7,20 +7,17 @@ import Layout from "../layout/Layout"
 import Grid from "../components/Grid"
 import Select from "../components/Select"
 
-const Home = ({ handleClick }) => {
+const Home = ({ handleClick, countCart }) => {
   // state
   const [products, setProducts] = useState([])
   const [categories, setCategories] = useState([])
   const [selectedCategory, setSelectedCategory] = useState("")
-  
+
   // didMount
   useEffect(() => {
     fetchData()
   }, [])
-  useEffect( () => {
 
-  },[selectedCategory])
-  
   //methodes
 
   const fetchData = async () => {
@@ -30,7 +27,7 @@ const Home = ({ handleClick }) => {
     setCategories(categoriesData)
   }
 
-  const handleChangeFilter = async e => {
+  const handleChangeFilter = async (e) => {
     const category = e.target.value
     setSelectedCategory(category)
     if (category === "") {
@@ -42,15 +39,19 @@ const Home = ({ handleClick }) => {
 
   const fetchProductsByCategory = async (category) => {
     const productsData = await getProductsByCategory(category)
-      setProducts(productsData)
+    setProducts(productsData)
   }
 
   return (
-    <Layout title="HomePage">
-      <Select handleChange={handleChangeFilter} value={selectedCategory} options={categories}  />
+    <Layout title="HomePage" countCart={countCart}>
+      <Select
+        handleChange={handleChangeFilter}
+        value={selectedCategory}
+        options={categories}
+      />
       <Grid>
         {products.map((product) => (
-          <Card handleClick={handleClick} product={product} />
+          <Card key={product.id} handleClick={handleClick} product={product} />
         ))}
       </Grid>
     </Layout>
